@@ -5,11 +5,9 @@
 Contains the functions and imported modules required for downloading image
 file(s) from it's URL.
 """
-
-from PIL import Image
 from io import BytesIO
+from PIL import Image
 import requests
-
 
 
 def download_image(url: str, f_name: str = "", file_format: str = ""):
@@ -30,7 +28,7 @@ def download_image(url: str, f_name: str = "", file_format: str = ""):
     img = Image.open(BytesIO(resp.content))
     img.save(f_name, file_format)
 
- 
+
 def download_from_list(url_list: list, img_format: str, f_name: str = ""):
     """Downloads all images from a list of URLs.
 
