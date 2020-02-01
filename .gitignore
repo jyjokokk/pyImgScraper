@@ -131,4 +131,5 @@ dmypy.json
 # YouCompleteMe
 .ycm_extra_conf.py
 
-material/
+# Data and material for testing
+data/
