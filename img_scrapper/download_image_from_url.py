@@ -11,6 +11,7 @@ from io import BytesIO
 import requests
 
 
+
 def download_image(url: str, f_name: str = "", file_format: str = ""):
     """Downloads an image from an URL.
 
@@ -30,7 +31,7 @@ def download_image(url: str, f_name: str = "", file_format: str = ""):
     img.save(f_name, file_format)
 
  
-def download_from_list(url_list: list, f_name: str = "", img_format: str = ""):
+def download_from_list(url_list: list, img_format: str, f_name: str = ""):
     """Downloads all images from a list of URLs.
 
     Takes a list of image URLs, and tries to download the image file from each
@@ -44,12 +45,9 @@ def download_from_list(url_list: list, f_name: str = "", img_format: str = ""):
         img_format: Image format to be saved as.
 
     """
-    save_as = f_name
-    save_format = img_format
+    if f_name == "":
+        f_name = "ScrapedImg"
     for i in range(len(url_list)):
-        if f_name == "":
-            save_as = url_list[i].rsplit("/")[-1]
-        if img_format == "":
-            save_format = save_as.rsplit(".")[-1]
-        download_image(url_list[i], f"{i}_{save_as}", img_format)
+        fname = f"{f_name}_{i}.{img_format}"
+        download_image(url_list[i], fname, img_format)
 
