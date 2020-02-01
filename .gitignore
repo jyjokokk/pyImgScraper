@@ -131,5 +131,7 @@ dmypy.json
 # YouCompleteMe
 .ycm_extra_conf.py
 
+img_scrapper/fetch.py
+
 # Data and material for testing
 data/
