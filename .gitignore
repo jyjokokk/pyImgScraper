@@ -128,8 +128,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# YouCompleteMe
+# Editor config files
 .ycm_extra_conf.py
+.vscode/
+
 
 img_scrapper/fetch.py
 

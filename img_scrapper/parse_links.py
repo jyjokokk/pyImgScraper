@@ -41,5 +41,6 @@ def get_links(html, regex) -> list:
 
     Returns: List of image links on the webpage.
     """
-    re.compile(regex)
-    links = regex.findall(str(html))
+    rex = re.compile(regex)
+    links = rex.findall(str(html))
+    return links
